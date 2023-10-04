@@ -5,6 +5,9 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 module.exports = function (defaults) {
   const app = new EmberAddon(defaults, {
     // Add options here
+    babel: {
+      // plugins: ['transform-class-properties', 'transform-react-jsx'],
+    },
   });
 
   /*
@@ -18,7 +21,7 @@ module.exports = function (defaults) {
   return maybeEmbroider(app, {
     skipBabel: [
       {
-        package: 'qunit',
+        package: ['qunit'],
       },
     ],
   });
